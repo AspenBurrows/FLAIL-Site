@@ -4,9 +4,22 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FLAIL - Official page for the sludge metal band. Merch, shows, and live footage available.">
+  <meta property="og:title" content="FLAIL">
+  <meta property="og:description" content="Official page for FLAIL - sludge metal band. Check out our merch, shows, and live footage!">
+  <meta property="og:image" content="favicon.png">
+  <meta property="og:url" content="https://flail.soy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FLAIL">
+  <meta name="twitter:description" content="Official page for FLAIL - sludge metal band. Merch, shows, and live footage available.">
+  <meta name="twitter:image" content="favicon.png">
   <title>FLAIL</title>
   <style>
     /* General styling */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -14,6 +27,11 @@
       color: #117000;
       font-family: Arial, sans-serif;
       text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 2rem;
     }
 
     /* Logo styling */
@@ -28,8 +46,8 @@
     .responsive-image {
       width: 100%;
       height: auto;
-      max-width: 600px; /* Optional: Set max-width for larger screens */
-      margin: 20px auto; /* Centers the image */
+      max-width: 600px;
+      margin: 20px auto;
       display: block;
     }
 
@@ -59,25 +77,20 @@
       width: 100%;
       max-width: 560px;
       height: 315px;
-      margin: 20px auto; /* Centers the iframe */
+      margin: 20px auto;
       display: block;
     }
 
     /* Mobile adjustments */
-   @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       .responsive-image {
-        max-width: 100%; /* Make sure the image scales appropriately on mobile */
+        max-width: 100%;
       }
-
       .links a {
         margin: 0 8px;
       }
     }
 
-    /* Spacing for "LIVE FOOTAGE" text */
-    h1 {
-      margin-top: 50px; /* Add space before LIVE FOOTAGE */
-    }
   </style>
   <script>
     // Function to adjust coordinates of image map
@@ -99,25 +112,25 @@
     }
 
     // Adjust image map when the window is resized or when the image loads
-    window.onload = adjustImageMap;
-    window.onresize = adjustImageMap; // Adjust on resize for responsiveness
+    document.addEventListener("DOMContentLoaded", adjustImageMap);
+    window.addEventListener("resize", adjustImageMap);
   </script>
 </head>
 <body>
 
   <!-- Logo -->
-  <img src="flail-logo.png" alt="FLAIL Logo" class="logo">
+  <img src="flail-logo.png" alt="FLAIL band logo" class="logo">
 
   <!-- Image with clickable map -->
   <img src="website-buttons.png" usemap="#image-map" class="responsive-image">
 
   <!-- Image Map -->
   <map name="image-map">
-    <area target="_blank" alt="Merch" title="Merch" href="https://flailsludge.square.site/" coords="38,62,513,208" shape="rect">
-    <area target="_blank" alt="Shows" title="Shows" href="https://linktr.ee/flailsludge" coords="625,60,1080,200" shape="rect">
-    <area target="_blank" alt="Bandcamp" title="Bandcamp" href="https://flailsludge.bandcamp.com/" coords="1201,58,1943,184" shape="rect">
-    <area target="_blank" alt="Instagram" title="Instagram" href="https://www.instagram.com/flail.sludge/" coords="181,309,957,465" shape="rect">
-    <area target="_blank" alt="Facebook" title="Facebook" href="https://www.facebook.com/flailsludge" coords="1077,309,1799,461" shape="rect">
+    <area target="_blank" alt="Merch - Visit our merch store" title="Merch" href="https://flailsludge.square.site/" coords="38,62,513,208" shape="rect" role="link">
+    <area target="_blank" alt="Shows - Upcoming concerts" title="Shows" href="https://linktr.ee/flailsludge" coords="625,60,1080,200" shape="rect" role="link">
+    <area target="_blank" alt="Bandcamp - Listen to our music" title="Bandcamp" href="https://flailsludge.bandcamp.com/" coords="1201,58,1943,184" shape="rect" role="link">
+    <area target="_blank" alt="Instagram - Follow us on Instagram" title="Instagram" href="https://www.instagram.com/flail.sludge/" coords="181,309,957,465" shape="rect" role="link">
+    <area target="_blank" alt="Facebook - Like us on Facebook" title="Facebook" href="https://www.facebook.com/flailsludge" coords="1077,309,1799,461" shape="rect" role="link">
   </map>
 
   <!-- LIVE FOOTAGE heading -->
@@ -125,15 +138,15 @@
 
   <!-- YouTube videos -->
   <div>
-    <iframe src="https://www.youtube.com/embed/piwGJE1_f6E?start=662" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/piwGJE1_f6E?start=662" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
 
   <div>
-    <iframe src="https://www.youtube.com/embed/m5HHz-0xqgs?start=299" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/m5HHz-0xqgs?start=299" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
 
   <div>
-    <iframe src="https://www.youtube.com/embed/qYzYX5uHhUc?start=770" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/qYzYX5uHhUc?start=770" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
 
 </body>
