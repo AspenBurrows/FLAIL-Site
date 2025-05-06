@@ -64,25 +64,27 @@
     }
   </style>
   <script>
-    // Adjust the coordinates for responsiveness
-    window.onload = function () {
+    // Function to adjust coordinates of image map
+    function adjustImageMap() {
       var img = document.querySelector('.responsive-image');
       var areas = document.querySelectorAll('area');
 
-      img.onload = function () {
-        var imgWidth = img.width;
-        var imgHeight = img.height;
+      var imgWidth = img.offsetWidth;
+      var imgHeight = img.offsetHeight;
 
-        // Adjust the coordinates to scale with the image size
-        areas.forEach(function (area) {
-          var coords = area.getAttribute('coords').split(',');
-          for (var i = 0; i < coords.length; i++) {
-            coords[i] = (parseInt(coords[i], 10) * (imgWidth / 1920)).toFixed(0);
-          }
-          area.setAttribute('coords', coords.join(','));
-        });
-      };
-    };
+      // Adjust the coordinates to scale with the image size
+      areas.forEach(function (area) {
+        var coords = area.getAttribute('coords').split(',');
+        for (var i = 0; i < coords.length; i++) {
+          coords[i] = (parseInt(coords[i], 10) * (imgWidth / 1920)).toFixed(0);
+        }
+        area.setAttribute('coords', coords.join(','));
+      });
+    }
+
+    // Adjust image map when the window is resized or when the image loads
+    window.onload = adjustImageMap;
+    window.onresize = adjustImageMap; // Adjust on resize for responsiveness
   </script>
 </head>
 <body>
