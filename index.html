@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FLAIL</title>
   <style>
-     .responsive-image {
-      width: 100%;  
-      height: auto;  
-      max-width: 1920px;  /* Optional: Limits the max size on large screens */
-    }
+    /* General styling */
     body {
       margin: 0;
       padding: 0;
@@ -19,21 +15,31 @@
       text-align: center;
     }
 
+    /* Logo styling */
     img.logo {
       margin-top: 20px;
-      width: 70%;  /* Make the logo more responsive */
-      max-width: 400px;  /* Adjust the max width for larger screens */
-      height: auto; /* Ensure the logo scales proportionally */
+      width: 70%;
+      max-width: 400px;
+      height: auto;
     }
 
+    /* Responsive image map styling */
+    .responsive-image {
+      width: 100%;
+      height: auto;
+      max-width: 1920px; /* Optional: Set max-width for larger screens */
+    }
+
+    /* Links container */
     .links {
       margin-top: 30px;
       font-size: 24px;
       font-weight: bold;
       line-height: 2;
-      padding: 0 20px; /* Add padding to allow text to have some space on sides */
+      padding: 0 20px;
     }
 
+    /* Link styling */
     .links a {
       color: #84c77a;
       text-decoration: underline;
@@ -45,28 +51,56 @@
       text-decoration: none;
     }
 
+    /* Mobile adjustments */
     @media screen and (max-width: 768px) {
       .links {
-        font-size: 28px; /* Increase font size for mobile screens */
-        padding: 0 10px; /* Reduce padding for smaller screens */
+        font-size: 28px;
+        padding: 0 10px;
       }
 
       .links a {
-        margin: 0 8px; /* Reduce space between links on smaller screens */
+        margin: 0 8px;
       }
     }
   </style>
+  <script>
+    // Adjust the coordinates for responsiveness
+    window.onload = function () {
+      var img = document.querySelector('.responsive-image');
+      var areas = document.querySelectorAll('area');
+
+      img.onload = function () {
+        var imgWidth = img.width;
+        var imgHeight = img.height;
+
+        // Adjust the coordinates to scale with the image size
+        areas.forEach(function (area) {
+          var coords = area.getAttribute('coords').split(',');
+          for (var i = 0; i < coords.length; i++) {
+            coords[i] = (parseInt(coords[i], 10) * (imgWidth / 1920)).toFixed(0);
+          }
+          area.setAttribute('coords', coords.join(','));
+        });
+      };
+    };
+  </script>
 </head>
 <body>
+
+  <!-- Logo -->
   <img src="flail-logo.png" alt="FLAIL Logo" class="logo">
+
+  <!-- Image with clickable map -->
   <img src="website-buttons.png" usemap="#image-map" class="responsive-image">
 
-<map name="image-map">
+  <!-- Image Map -->
+  <map name="image-map">
     <area target="_blank" alt="Merch" title="Merch" href="https://flailsludge.square.site/" coords="38,62,513,208" shape="rect">
     <area target="_blank" alt="Shows" title="Shows" href="https://linktr.ee/flailsludge" coords="625,60,1080,200" shape="rect">
     <area target="_blank" alt="Bandcamp" title="Bandcamp" href="https://flailsludge.bandcamp.com/" coords="1201,58,1943,184" shape="rect">
     <area target="_blank" alt="Instagram" title="Instagram" href="https://www.instagram.com/flail.sludge/" coords="181,309,957,465" shape="rect">
-    <area target="" alt="Facebook" title="Facebook" href="https://www.facebook.com/p/FLAIL-100083104974073/" coords="1077,309,1799,461" shape="rect">
-</map>
+    <area target="_blank" alt="Facebook" title="Facebook" href="https://www.facebook.com/p/FLAIL-100083104974073/" coords="1077,309,1799,461" shape="rect">
+  </map>
+
 </body>
 </html>
