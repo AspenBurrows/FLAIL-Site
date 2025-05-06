@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FLAIL</title>
   <style>
     body {
@@ -14,26 +15,40 @@
     }
 
     img.logo {
-      margin-top: 50px;
-      width: 300px;
-      max-width: 90%;
+      margin-top: 20px;
+      width: 70%;  /* Make the logo more responsive */
+      max-width: 400px;  /* Adjust the max width for larger screens */
+      height: auto; /* Ensure the logo scales proportionally */
     }
 
     .links {
-      margin-top: 50px;
+      margin-top: 30px;
       font-size: 24px;
       font-weight: bold;
       line-height: 2;
+      padding: 0 20px; /* Add padding to allow text to have some space on sides */
     }
 
     .links a {
       color: #84c77a;
       text-decoration: underline;
       margin: 0 10px;
+      display: inline-block;
     }
 
     .links a:hover {
       text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .links {
+        font-size: 28px; /* Increase font size for mobile screens */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+      }
+
+      .links a {
+        margin: 0 8px; /* Reduce space between links on smaller screens */
+      }
     }
   </style>
 </head>
